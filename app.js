@@ -1,33 +1,21 @@
-function nasarequested() {
     const baseUrl = 'https://api.nasa.gov/planetary/apod?api_key='
     const apiKey = 'o5gNtRw010GxSEnvZU9WrzxQzGSBGjGVy5AeNHcD'
-    const dateInput = document.querySelector("#datepicker");
-    dateInput.addEventListener('change', (e) => {
-        e.preventDefault();
-        nasarequested();
-    })
+
     const title = document.querySelector("#title");
     const copyright = document.querySelector("#copyright");
     const mediaSection = document.querySelector("#media-section");
     const information = document.querySelector("#description");
-    const currentDate = new Date().toISOString().slice(0, 10);
     const imageSection = `<a id="hdimg" href="" target="-blank">
      <div class="image-div">
      <img id="image_of_the_day" src="" alt="image-by-nasa">
      </div>
     </a>`
 
-    const videoSection = `<div class="video-div"> <iframe id="videoLink" src="" frameborder="0"></iframe></div>`
-    let newDate = "&date=" + dateInput.value + "&";
-
-
-
     function fetchData() {
         try {
             fetch((baseUrl + apiKey))
                 .then(response => response.json())
                 .then(json => {
-                    console.log(json);
                     diplaydata(json)
                 })
         } catch (error) {
@@ -45,9 +33,9 @@ function nasarequested() {
             copyright.innerHTML = ""
         }
 
+
         date.innerHTML = data.date;
-        dateInput.max = currentDate;
-        dateInput.min = "1995-06-16";
+
 
 
         if (data.media_type == "video") {
@@ -62,5 +50,3 @@ function nasarequested() {
         information.innerHTML = data.explanation
     }
     fetchData();
-}
-nasarequested().onload;

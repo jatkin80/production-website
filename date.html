@@ -11,12 +11,39 @@
 
     <link rel="stylesheet" href="style.css">
     <script defer src="date.js"></script>
-    <title>Document</title>
+    <title>Date-Picker</title>
 </head>
 
 <body>
-    <div id="content">
-    </div>
+    <main>
+        <header>
+            <h1>Nasa's Astronomical Picture of the Day</h1>
+
+            <form id="submit-date">
+                <label for="date-picker">Pick a date:</label>
+                <input type="date" id="datepicker" name="datepicker" min="" max="">
+                </label>
+                <input type="submit">
+            </form>
+
+            <hr style="color: white; width: 60vw;">
+        </header>
+
+        <section class="title-section">
+            <h2 id="title"></h2>
+            <p id="date"></p>
+            <small style="display: block;" id="copyright"></small>
+        </section>
+
+        <section id="media-section">
+        </section>
+
+        <div class="description-div">
+            <p id="description"></p>
+        </div>
+
+    </main>
 </body>
+
 
 </html>

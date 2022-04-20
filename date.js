@@ -1,19 +1,67 @@
-const queryString = window.location.search
-const queryParams = new URLSearchParams(queryString)
+function nasarequested() {
+    const baseUrl = 'https://api.nasa.gov/planetary/apod?api_key='
+    const apiKey = 'o5gNtRw010GxSEnvZU9WrzxQzGSBGjGVy5AeNHcD'
 
-console.log(queryParams)
+    const title = document.querySelector("#title");
+    const copyright = document.querySelector("#copyright");
+    const mediaSection = document.querySelector("#media-section");
+    const information = document.querySelector("#description");
+    const currentDate = new Date().toISOString().slice(0, 10);
+    const imageSection = `<a id="hdimg" href="" target="-blank">
+     <div class="image-div">
+     <img id="image_of_the_day" src="" alt="image-by-nasa">
+     </div>
+    </a>`
+
+    const videoSection = `<div class="video-div"> <iframe id="videoLink" src="" frameborder="0"></iframe></div>`
+    let newDate = "&date=" + dateInput.value + "&";
 
 
-function useApiData(data) {
 
-    document.querySelector("#content").innerHTML += `<img src="${ data.url }">`
-    document.querySelector("#content").innerHTML += data.explanation
+    function fetchData() {
+        try {
+            fetch((baseUrl + apiKey + newDate))
+                .then(response => response.json())
+                .then(json => {
+                    diplaydata(json)
+                })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    function diplaydata(data) {
+
+        title.innerHTML = data.title;
+
+        if (data.hasOwnProperty("copyright")) {
+            copyright.innerHTML = data.copyright;
+        } else {
+            copyright.innerHTML = ""
+        }
+
+
+        date.innerHTML = data.date;
+        dateInput.max = currentDate;
+        dateInput.min = "1995-06-16";
+
+
+        if (data.media_type == "video") {
+            mediaSection.innerHTML = videoSection;
+            document.getElementById("videoLink").src = data.url;
+
+        } else {
+            mediaSection.innerHTML = imageSection;
+            document.getElementById("hdimg").href = data.hdurl;
+            document.getElementById("image_of_the_day").src = data.url;
+        }
+        information.innerHTML = data.explanation
+    }
+    fetchData();
 }
-
-const api_key = "o5gNtRw010GxSEnvZU9WrzxQzGSBGjGVy5AeNHcD"
-fetch(`https://api.nasa.gov/planetary/apod?api_key=${api_key}&q=date`)
-    .then((response) => response.json())
-    .then(parsedResponse => {
-        return useApiData(parsedResponse)
-
-    })
+const dateInput = document.querySelector("#datepicker");
+dateInput.addEventListener('submit', (event) => {
+    event.preventDefault();
+    nasarequested().onload;
+})
+nasarequested().onload;
