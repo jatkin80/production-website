@@ -13,6 +13,7 @@ body {
 header {
     text-align: center;
     padding: .5rem;
+    border: white 2px solid;
 }
 
 main {
@@ -21,7 +22,7 @@ main {
 }
 
 #title {
-    padding: 1rem;
+    padding: .5rem;
 }
 
 .picture-explanation-container {
@@ -31,6 +32,8 @@ main {
 
 #picture {
     width: 80%;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 #explanation {
@@ -38,6 +41,6 @@ main {
     margin: 0.1rem auto 1rem;
     border: solid 1px white;
     padding: 0.5rem;
-    border-radius: 00.5rem;
+    border-radius: 0.5rem;
     line-height: 182%;
 }

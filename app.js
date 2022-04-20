@@ -1,26 +1,35 @@
-    const baseUrl = 'https://api.nasa.gov/planetary/apod?api_key='
-    const apiKey = 'o5gNtRw010GxSEnvZU9WrzxQzGSBGjGVy5AeNHcD'
-    const $title = document.querySelector('#title')
-    const $date = document.querySelector('#date')
-    const $picture = document.querySelector('#picture')
-    const $explanation = document.querySelector('#explanation')
+      const apiKey = 'o5gNtRw010GxSEnvZU9WrzxQzGSBGjGVy5AeNHcD'
+      const currentDate = new Date().toISOString().slice(0, 10);
 
-    const fetchNASAData = async() => {
-        try {
-            const response = await fetch(`${baseUrl}${apiKey}`)
-            const data = await response.json()
-            console.log('NASA APOD data', data)
-            displayData(data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+      const $title = document.querySelector('#title')
+      const $date = document.querySelector('#date')
+      const $picture = document.querySelector('#picture')
+      const $explanation = document.querySelector('#explanation')
+      const form = document.querySelector('form')
 
-    const displayData = data => {
-        $title.textContent = data.title
-        $date.textContent = data.date
-        $picture.src = data.hdurl
-        $explanation.textContent = data.explanation
-    }
 
-    fetchNASAData()
+      form.addEventListener("submit", (event) => {
+
+          event.preventDefault();
+          const formData = new FormData(event.target)
+
+          const newDate = formData.get("newDate")
+
+          window.location.href = `date.html?${newDate}`
+      })
+
+
+      fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey }`)
+          .then(response => response.json())
+          .then(data => {
+              useApiData(data)
+          })
+
+
+
+      function useApiData(data) {
+          $title.textContent = data.title
+          $date.textContent = data.date
+          $picture.src = data.hdurl
+          $explanation.textContent = data.explanation
+      }
