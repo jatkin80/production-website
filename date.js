@@ -1,17 +1,19 @@
 const apiKey = 'o5gNtRw010GxSEnvZU9WrzxQzGSBGjGVy5AeNHcD'
-const queryString = (window.location.search)
-const queryParameters = new URLSearchParams(queryString)
-const newDate = queryParameters.get("newDate")
-console.log(newDate)
-
+const url = new URL(window.location)
+console.log(url)
+const queryString = new URLSearchParams(url.search)
+console.log(queryString)
+const newDate = `${queryString.get("newDate")}`
 
 const $title = document.querySelector('#title')
 const $date = document.querySelector('#date')
 const $picture = document.querySelector('#picture')
 const $explanation = document.querySelector('#explanation')
+const form = document.querySelector('form')
 
 
-fetch(`https://api.nasa.gov/planetary/apod?api_key=${ apiKey }&q=${newDate}`)
+
+fetch(`https://api.nasa.gov/planetary/apod?api_key=${ apiKey }&date=${newDate}`)
     .then(response => response.json())
 
 .then(data => {

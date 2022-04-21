@@ -1,5 +1,5 @@
       const apiKey = 'o5gNtRw010GxSEnvZU9WrzxQzGSBGjGVy5AeNHcD'
-      const currentDate = new Date().toISOString().slice(0, 10);
+
 
       const $title = document.querySelector('#title')
       const $date = document.querySelector('#date')
@@ -12,8 +12,10 @@
 
           event.preventDefault();
           const formData = new FormData(event.target)
-
           const newDate = formData.get("newDate")
+          console.log(newDate)
+
+          console.log(formData)
 
           window.location.href = `date.html?${newDate}`
       })
