@@ -5,6 +5,8 @@ const $picture = document.querySelector("#picture")
 const $explanation = document.querySelector("#explanation")
 const form = document.querySelector("form")
 const button = document.querySelector("button")
+const h1 = document.querySelector("h1")
+const newDate = document.querySelector("#newDate")
 
 form.addEventListener("submit", (event) => {
   event.preventDefault()

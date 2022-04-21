@@ -7,6 +7,7 @@ const $date = document.querySelector("#date")
 const $picture = document.querySelector("#picture")
 const $explanation = document.querySelector("#explanation")
 const button = document.querySelector("button")
+const h1 = document.querySelector("h1")
 
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${ apiKey }&date=${newDate}`)
   .then(response => response.json())
