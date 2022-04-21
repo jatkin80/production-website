@@ -13,6 +13,18 @@ form {
 }
 
 @media only screen and (max-width: 620px) {
+    #newDate {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    input[type="submit"] {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
     form {
         font-size: 12px;
     }
