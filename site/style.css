@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-body {}
-
 a {
     text-decoration: none;
 }
@@ -12,6 +10,12 @@ a:visited {
 form {
     text-transform: uppercase;
     padding-bottom: .5rem;
+}
+
+@media only screen and (max-width: 620px) {
+    form {
+        font-size: 12px;
+    }
 }
 
 body {
@@ -30,6 +34,12 @@ header {
     text-transform: uppercase;
 }
 
+@media only screen and (max-width: 620px) {
+    h1 {
+        font-size: 18px;
+    }
+}
+
 main {
     margin: auto;
     text-align: center;
@@ -43,9 +53,21 @@ main {
     opacity: 0.8;
 }
 
+@media only screen and (max-width: 620px) {
+    #title {
+        font-size: 16px;
+    }
+}
+
 #date {
     background-color: hsl(240, 57%, 3%);
     opacity: 0.8;
+}
+
+@media only screen and (max-width: 620px) {
+    #date {
+        font-size: 12px;
+    }
 }
 
 .picture-explanation-container {
@@ -54,7 +76,7 @@ main {
 }
 
 #picture {
-    width: 80%;
+    max-width: 80%;
     margin-bottom: 0.5rem;
     border-radius: rgb(240, 255, 255) 1px solid;
 }
@@ -68,4 +90,11 @@ main {
     padding: 0.5rem;
     border-radius: 0.5rem;
     line-height: 182%;
+}
+
+@media only screen and (max-width: 620px) {
+    #explanation {
+        line-height: 140%;
+        font-size: 12px;
+    }
 }
