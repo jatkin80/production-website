@@ -17,7 +17,7 @@
 
           console.log(formData)
 
-          window.location.href = `date.html?${newDate}`
+          window.location.href = `date.html?newDate=${newDate}`
       })
 
 
