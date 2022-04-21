@@ -1,112 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-a {
-    text-decoration: none;
-}
-
-a:visited {
-    color: white;
-}
-
-form {
-    text-transform: uppercase;
-    padding-bottom: .5rem;
-}
-
-@media only screen and (max-width: 620px) {
-    #newDate {
-        font-size: 10px;
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    a {
+        text-decoration: none;
     }
-}
 
-@media only screen and (max-width: 620px) {
-    input[type="submit"] {
-        font-size: 10px;
+    a:visited {
+        color: white;
     }
-}
 
-@media only screen and (max-width: 620px) {
     form {
-        font-size: 12px;
+        text-transform: uppercase;
+        padding-bottom: .5rem;
     }
-}
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    background-image: url(/site/background.jpg);
-    color: rgb(240, 255, 255);
-}
-
-header {
-    text-align: center;
-    padding: .5rem;
-    background-color: hsl(240, 57%, 3%);
-    opacity: 0.8;
-    border-bottom: rgb(240, 255, 255) groove;
-    text-transform: uppercase;
-}
-
-@media only screen and (max-width: 620px) {
-    h1 {
-        font-size: 18px;
+    @media only screen and (max-width: 620px) {
+        #newDate {
+            font-size: 10px;
+        }
     }
-}
 
-main {
-    margin: auto;
-    text-align: center;
-}
+    @media only screen and (max-width: 620px) {
+        input[type="submit"] {
+            font-size: 10px;
+        }
+    }
 
-#title {
-    padding: .5rem;
-    color: rgb(240, 255, 255);
-    text-transform: uppercase;
-    background-color: hsl(240, 57%, 3%);
-    opacity: 0.8;
-}
+    @media only screen and (max-width: 620px) {
+        form {
+            font-size: 12px;
+        }
+    }
 
-@media only screen and (max-width: 620px) {
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        background-image: url(/site/background.jpg);
+        color: rgb(240, 255, 255);
+    }
+
+    header {
+        text-align: center;
+        padding: .5rem;
+        background-color: hsl(240, 57%, 3%);
+        opacity: 0.8;
+        border-bottom: rgb(240, 255, 255) groove;
+        text-transform: uppercase;
+    }
+
+    @media only screen and (max-width: 620px) {
+        h1 {
+            font-size: 18px;
+        }
+    }
+
+    main {
+        margin: auto;
+        text-align: center;
+    }
+
     #title {
-        font-size: 16px;
+        padding: .5rem;
+        color: rgb(240, 255, 255);
+        text-transform: uppercase;
+        background-color: hsl(240, 57%, 3%);
+        opacity: 0.8;
     }
-}
 
-#date {
-    background-color: hsl(240, 57%, 3%);
-    opacity: 0.8;
-}
+    @media only screen and (max-width: 620px) {
+        #title {
+            font-size: 16px;
+        }
+    }
 
-@media only screen and (max-width: 620px) {
     #date {
-        font-size: 12px;
+        background-color: hsl(240, 57%, 3%);
+        opacity: 0.8;
     }
-}
 
-.picture-explanation-container {
-    width: 80%;
-    margin: auto;
-}
+    @media only screen and (max-width: 620px) {
+        #date {
+            font-size: 12px;
+        }
+    }
 
-#picture {
-    max-width: 80%;
-    margin-bottom: 0.5rem;
-    border-radius: rgb(240, 255, 255) 1px solid;
-}
+    .picture-explanation-container {
+        width: 80%;
+        margin: auto;
+    }
 
-#explanation {
-    width: 80%;
-    background-color: hsl(240, 57%, 3%);
-    opacity: 0.8;
-    margin: 0.1rem auto 1rem;
-    border: solid 1px rgb(240, 255, 255);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    line-height: 182%;
-}
+    #picture {
+        max-width: 80%;
+        margin-bottom: 0.5rem;
+        border-radius: rgb(240, 255, 255) 1px solid;
+    }
 
-@media only screen and (max-width: 620px) {
     #explanation {
-        line-height: 140%;
-        font-size: 12px;
+        width: 80%;
+        background-color: hsl(240, 57%, 3%);
+        opacity: 0.8;
+        margin: 0.1rem auto 1rem;
+        border: solid 1px rgb(240, 255, 255);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        line-height: 182%;
     }
-}
+
+    @media only screen and (max-width: 620px) {
+        #explanation {
+            line-height: 140%;
+            font-size: 12px;
+        }
+    }
+
+    #error {
+        display: flex;
+        justify-content: center;
+        padding: 20%;
+    }
