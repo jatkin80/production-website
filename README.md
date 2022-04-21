@@ -1,6 +1,5 @@
 View in [Github Pages](https://jatkin80.github.io/production-website/)
 
-## Features
 
 ### Multiple pages
 
